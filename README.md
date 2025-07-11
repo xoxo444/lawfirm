@@ -2,6 +2,7 @@
 A client name-based legal case matcher that uses **semantic search** and **Gemini (Google AI)** to retrieve and simplify case summaries from a `.docx` database.
 
 📂Project Features
+
 🔍 **Client Name Matching** using Sentence Transformers + Fuzzy Matching  
 📄 **Reads Case Data** from a Word `.docx` file  
 🤖 **Uses Gemini API** to Simplify Legal Summaries  
