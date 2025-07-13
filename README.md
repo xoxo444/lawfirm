@@ -1,5 +1,6 @@
-⚖️ Client Name-Based Legal Case Matcher with Gemini Summary Generator
-A client name-based legal case matcher that uses **semantic search** and **Gemini (Google AI)** to retrieve and simplify case summaries from a `.docx` database.
+⚖️ Legal Case Matcher Based on Client Name with Gemini AI Summarizer
+
+A Python-based tool that matches legal cases by client name using semantic search, and simplifies case summaries using Gemini (Google AI). Case data is sourced from a .docx file.
 
 📂Project Features
 
