@@ -1,3 +1,7 @@
+#the one that provides you w a GUI, upload docx (full of cases), enter the client's name you wanna research on, ask a query if any and good to go
+#only takes 1 document at a time, might be full of numerous cases or a single case
+
+
 import gradio as gr
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
