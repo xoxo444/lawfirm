@@ -97,7 +97,7 @@ This project is free and open-source for learning and legal research use cases.
 * [python-docx](https://python-docx.readthedocs.io/)
 
 
-👩‍💻 Built by: [Jiya Tiwari](https://github.com/xoxo444)
+👩‍💻 Built by: [xoxo](https://github.com/xoxo444)
 
 
 
