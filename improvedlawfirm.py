@@ -1,7 +1,3 @@
-#the one that provides you w a GUI, upload docx (full of cases), enter the client's name you wanna research on, ask a query if any and good to go
-#only takes 1 document at a time and the doc should contain numerous cases
-
-
 import gradio as gr
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -22,14 +18,14 @@ if api_key:
     gemini = genai.GenerativeModel("gemini-1.5-flash")
 else:
     gemini = None
-    print("❌ GEMINI_API_KEY not found in .env file.")
+    print(" GEMINI_API_KEY not found in .env file.")
 
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 # Function to load cases from uploaded DOCX
 def load_cases_from_file(file_path):
     if not file_path or not os.path.exists(file_path):
-        return [], "⚠️ File not found or not uploaded."
+        return [], " File not found or not uploaded."
 
     text = docx2txt.process(file_path)
     lines = [line.strip() for line in text.splitlines() if line.strip()]
@@ -54,7 +50,7 @@ def load_cases_from_file(file_path):
     if current_case:
         cases.append(current_case)
 
-    return cases, f"✅ Loaded {len(cases)} cases."
+    return cases, f"Loaded {len(cases)} cases."
 
 # Main logic
 def case_assistant(file, client_name, question=""):
@@ -77,7 +73,7 @@ def case_assistant(file, client_name, question=""):
     final_index = best_sem_index if semantic_score > 0.6 else best_fuzzy_index if fuzzy_score > 80 else None
 
     if final_index is None:
-        return "❌ No matching case found.", "", "", ""
+        return " No matching case found.", "", "", ""
 
     case = cases[final_index]
     name = case.get("client", "N/A")
