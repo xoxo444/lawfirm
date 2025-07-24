@@ -8,55 +8,6 @@ import google.generativeai as genai
 import numpy as np
 import os
 
-#css
-custom_css = """
-body, .gradio-container {
-  background-color: black;
-  color: #00ffff !important;
-}
-
-.dark body, .dark .gradio-container {
-  background-color: black !important;
-  color: #fff !important;
-}
-
-#header h1 {
-  color: beige;
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-button {
-  background-color: beige !important;
-  color: black !important;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px !important;
-  border: none;
-  font-size: 16px;
-}
-
-textarea, input[type="text"] {
-  color: white; 
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  padding: 10px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.gr-markdown-output {
-  background-color: black;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 15px;
-  border: 1px solid #ddd;
-  line-height: 1.6;
-  font-family: 'Georgia', serif;
-}
-"""
-
 load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")  # Add your key in .env file as GOOGLE_API_KEY=your_key_here
 genai.configure(api_key=api_key)
@@ -183,7 +134,7 @@ def generate_tts(text):
     tts.save(temp_file.name)
     return temp_file.name
 
-with gr.Blocks(css=custom_css) as iface:
+with gr.Blocks(css="lawfirm.css") as iface:
     gr.Markdown("# ⚖️ Law Firm Case Assistant", elem_id="header")
     gr.Markdown("Choose how you want to search legal cases:")
 
